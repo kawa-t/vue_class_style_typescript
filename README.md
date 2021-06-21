@@ -1,0 +1,1 @@
+# vue_class_style_typescript
