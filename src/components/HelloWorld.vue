@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <div class="home">
       <MyButton :greet="greetText"></MyButton>
+      <parent-page />
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -91,11 +91,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import MyButton from "./HelloWorld.vue";
+import MyButton from "./SampleButton.vue";
+import ParentPage from "./Parent.vue";
 
 @Component({
+  name: "Home",
   components: {
     MyButton,
+    ParentPage,
   },
 })
 export default class Home extends Vue {
@@ -103,7 +106,6 @@ export default class Home extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

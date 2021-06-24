@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <button @click="onClick">ボタン</button>
+  <div class="hello">
+    <h1>aaa</h1>
+    <h1>{{ massage }}</h1>
+    <p>{{ saySomething() }}</p>
   </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class MyButton extends Vue {
+export default class HelloWorld extends Vue {
   @Prop()
-  public greet?: string;
+  private massage!: string;
 
-  public onClick(): void {
-    alert(this.greet);
+  saySomething(): string {
+    const something = "something";
+    return something;
   }
 }
 </script>
