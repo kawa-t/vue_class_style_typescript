@@ -11,6 +11,6 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class Child extends Vue {
   @Prop()
-  private Childtitle: string;
+  public Childtitle!: string;
 }
 </script>
