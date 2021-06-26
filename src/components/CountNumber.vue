@@ -6,9 +6,9 @@
 </template>
 <script lang="ts">
 import Componrnt from "vue-class-component";
-import { Vue } from "vue-property-decorator";
-import AddButton from "./components/Atoms/AddButton.vue";
-import Display from "./components/Atoms/Display.vue";
+import { Vue, Watch } from "vue-property-decorator";
+import AddButton from "./Atoms/AddButton.vue";
+import Display from "./Atoms/Display.vue";
 
 @Componrnt({
   components: {
@@ -16,5 +16,17 @@ import Display from "./components/Atoms/Display.vue";
     Display,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public count = 0;
+  public countUp(): void {
+    this.count++;
+  }
+  @Watch("count", { immediate: true })
+  public finishCount(newVal: number): void {
+    if (newVal > 50) {
+      alert("EndGame");
+      this.count = 0;
+    }
+  }
+}
 </script>
