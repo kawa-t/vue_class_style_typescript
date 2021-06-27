@@ -9,7 +9,7 @@ import Component from "vue-class-component";
 import { Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class Display extends Vue {
+export default class PlayGound extends Vue {
   @Prop()
   public count!: number;
 

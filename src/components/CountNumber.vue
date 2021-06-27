@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="count__wrapper">
     <AddButton @push="countUp"></AddButton>
-    <Display :count="count"></Display>
+    <PlayGound :count="count"></PlayGound>
   </div>
 </template>
 <script lang="ts">
-import Componrnt from "vue-class-component";
+import Component from "vue-class-component";
 import { Vue, Watch } from "vue-property-decorator";
 import AddButton from "./Atoms/AddButton.vue";
-import Display from "./Atoms/Display.vue";
+import PlayGound from "./Atoms/PlayGound.vue";
 
-@Componrnt({
+@Component({
   components: {
     AddButton,
-    Display,
+    PlayGound,
   },
 })
 export default class App extends Vue {
@@ -21,12 +21,22 @@ export default class App extends Vue {
   public countUp(): void {
     this.count++;
   }
-  @Watch("count", { immediate: true })
-  public finishCount(newVal: number): void {
-    if (newVal > 50) {
+  @Watch("count")
+  public finishCount(CountNumer: number): void {
+    if (CountNumer > 10) {
       alert("EndGame");
       this.count = 0;
     }
   }
 }
 </script>
+
+<style>
+button {
+  margin: 10px;
+  padding: 10px;
+}
+.count__wrapper {
+  margin: 30px 100px;
+}
+</style>

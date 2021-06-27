@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>クラスコンポーネントで記述</h3>
     <button @click="push">Click Button</button>
   </div>
 </template>

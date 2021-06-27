@@ -1,18 +1,19 @@
 <template>
-  <div id="app">
+  <div id="app" class="app__wrapper">
     <CountNumber />
+    <CountNumberExtend />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
 import CountNumber from "./components/CountNumber.vue";
+import CountNumberExtend from "./components/CountNumberExtend.vue";
 
 @Component({
   components: {
-    HelloWorld,
     CountNumber,
+    CountNumberExtend,
   },
 })
 export default class App extends Vue {}
@@ -26,5 +27,9 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.app__wrapper {
+  display: flex;
+  justify-content: center;
 }
 </style>
